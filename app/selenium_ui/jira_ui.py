@@ -61,12 +61,7 @@ Write your custom selenium scripts in `app/extension/jira/extension_ui.py`.
 Refer to `app/selenium_ui/jira/modules.py` for examples.
 """
 def test_1_selenium_custom_action(jira_webdriver, jira_datasets, jira_screen_shots):
-    extension_ui.app_specific_action_1(jira_webdriver, jira_datasets)
-    extension_ui.app_specific_action_2(jira_webdriver, jira_datasets)
-    extension_ui.app_specific_action_3(jira_webdriver, jira_datasets)
-    extension_ui.app_specific_action_4(jira_webdriver, jira_datasets)
-    extension_ui.app_specific_action_5(jira_webdriver, jira_datasets)
-    extension_ui.app_specific_action_6(jira_webdriver, jira_datasets)
+    extension_ui.app_specific_action(jira_webdriver, jira_datasets)
 
 # this action should be the last one
 def test_2_selenium_z_log_out(jira_webdriver, jira_datasets, jira_screen_shots):
