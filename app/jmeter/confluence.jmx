@@ -11159,7 +11159,7 @@ if (response_data.username != vars.get(&quot;app_specific_username&quot;)) {
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">{&quot;name&quot;:&quot;Project A&quot;,&quot;token&quot;:&quot;41493-9a99ca6a-6e3c-41ff-a5ec-2d3288ec5037&quot;,&quot;files&quot;:[]}</stringProp>
+                      <stringProp name="Argument.value">{&quot;name&quot;:&quot;Project A&quot;,&quot;token&quot;:&quot;41493-9a99ca6a-6e3c-41ff-a5ec-2d3288ec5037&quot;}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                     </elementProp>
                   </collectionProp>
@@ -11195,52 +11195,9 @@ if (response_data.username != vars.get(&quot;app_specific_username&quot;)) {
                       <stringProp name="Header.name">content-type</stringProp>
                       <stringProp name="Header.value">application/json</stringProp>
                     </elementProp>
-                  </collectionProp>
-                </HeaderManager>
-                <hashTree/>
-              </hashTree>
-              <!-- POST /rest/figma/1.0/file -->
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /rest/figma/1.0/file" enabled="true">
-                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                  <collectionProp name="Arguments.arguments">
-                    <elementProp name="" elementType="HTTPArgument">
-                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">{&quot;key&quot;:&quot;QZit9LPweyY8IfII3Ichht&quot;,&quot;tokenId&quot;:1,&quot;links&quot;:[]}</stringProp>
-                      <stringProp name="Argument.metadata">=</stringProp>
-                    </elementProp>
-                  </collectionProp>
-                </elementProp>
-                <stringProp name="HTTPSampler.domain"></stringProp>
-                <stringProp name="HTTPSampler.port"></stringProp>
-                <stringProp name="HTTPSampler.protocol"></stringProp>
-                <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-                <stringProp name="HTTPSampler.path">${application.postfix}/rest/figma/1.0/file</stringProp>
-                <stringProp name="HTTPSampler.method">POST</stringProp>
-                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-                <stringProp name="HTTPSampler.response_timeout"></stringProp>
-              </HTTPSamplerProxy>
-              <hashTree>
-                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                  <collectionProp name="Asserion.test_strings">
-                    <stringProp name="-227432036">&quot;key&quot;:&quot;QZit9LPweyY8IfII3Ichht&quot;</stringProp>
-                  </collectionProp>
-                  <stringProp name="Assertion.custom_message"></stringProp>
-                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                  <boolProp name="Assertion.assume_success">false</boolProp>
-                  <intProp name="Assertion.test_type">16</intProp>
-                </ResponseAssertion>
-                <hashTree/>
-                <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                  <collectionProp name="HeaderManager.headers">
                     <elementProp name="" elementType="Header">
-                      <stringProp name="Header.name">content-type</stringProp>
-                      <stringProp name="Header.value">application/json</stringProp>
+                      <stringProp name="Header.name">X-Atlassian-Token</stringProp>
+                      <stringProp name="Header.value">nocheck</stringProp>
                     </elementProp>
                   </collectionProp>
                 </HeaderManager>
@@ -11292,6 +11249,10 @@ if (response_data.username != vars.get(&quot;app_specific_username&quot;)) {
                     <elementProp name="X-Requested-With" elementType="Header">
                       <stringProp name="Header.name">X-Requested-With</stringProp>
                       <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                    </elementProp>
+                    <elementProp name="" elementType="Header">
+                      <stringProp name="Header.name">X-Atlassian-Token</stringProp>
+                      <stringProp name="Header.value">nocheck</stringProp>
                     </elementProp>
                     <elementProp name="Content-Type" elementType="Header">
                       <stringProp name="Header.name">Content-Type</stringProp>
