@@ -11,30 +11,30 @@ from util.conf import CONFLUENCE_SETTINGS
 def app_specific_action(webdriver, datasets):
     page = BasePage(webdriver)
     
-    adobepdf_viewer_specific_page_id = 40805633
-    adobepdf_slideshow_specific_page_id = 40805631
-    adobepdf_inline_specific_page_id = 40805629
-    adobexd_specific_page_id = 39976963
-    airtable_specific_page_id = 40239105
-    calendly_specific_page_id = 40805637
-    canva_specific_page_id = 40805639
-    deepnote_specific_page_id = 40805642
-    figma_specific_page_id = 40805644
-    framer_specific_page_id = 40805646
-    geckoboard_specific_page_id = 40805648
-    github_specific_page_id = 40805650
-    gslides_specific_page_id = 40805652
-    hotjar_specific_page_id = 40805654
-    invision_specific_page_id = 40805656
-    keynote_specific_page_id = 40805635
-    marvel_specific_page_id = 40805658
-    miro_specific_page_id = 40805662
-    netlify_specific_page_id = 40805664
-    octopus_specific_page_id = 40805666
-    pitch_specific_page_id = 40805668
-    prezi_specific_page_id = 40805670
-    protopie_specific_page_id = 40805672
-    zeplin_specific_page_id = 40805676
+    adobepdf_viewer_specific_page_id = 44008567
+    adobepdf_slideshow_specific_page_id = 44008571
+    adobepdf_inline_specific_page_id = 44008569
+    adobexd_specific_page_id = 44008573
+    airtable_specific_page_id = 44008575
+    calendly_specific_page_id = 44008577
+    canva_specific_page_id = 44008579
+    deepnote_specific_page_id = 44008581
+    figma_specific_page_id = 44008583
+    framer_specific_page_id = 44008585
+    geckoboard_specific_page_id = 44008587
+    github_specific_page_id = 44008589
+    gslides_specific_page_id = 44008591
+    hotjar_specific_page_id = 44008593
+    invision_specific_page_id = 44008595
+    keynote_specific_page_id = 44008597
+    marvel_specific_page_id = 44008599
+    miro_specific_page_id = 44008601
+    netlify_specific_page_id = 44008603
+    octopus_specific_page_id = 44008605
+    pitch_specific_page_id = 44008607
+    prezi_specific_page_id = 44008609
+    protopie_specific_page_id = 44008612
+    zeplin_specific_page_id = 44008614
 
     # To run action as specific user uncomment code bellow.
     # NOTE: If app_specific_action is running as specific user, make sure that app_specific_action is running
