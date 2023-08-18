@@ -10,7 +10,7 @@ from util.conf import CONFLUENCE_SETTINGS
 
 def app_specific_action(webdriver, datasets):
     page = BasePage(webdriver)
-    app_specific_page_id = 41216607
+    app_specific_page_id = 43942871
 
     # To run action as specific user uncomment code bellow.
     # NOTE: If app_specific_action is running as specific user, make sure that app_specific_action is running
