@@ -35,6 +35,7 @@ def app_specific_action(webdriver, datasets):
         def sub_measure():
             print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=ProjectVariables&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=ProjectVariables&projectKey={project_key}")
+            print(f'Waiting for element with ID ProjectVariables')
             page.wait_until_visible((By.ID, "ProjectVariables"))
         sub_measure()
 
@@ -42,6 +43,7 @@ def app_specific_action(webdriver, datasets):
         def sub_measure():
             print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=EnrichedDashboard&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=EnrichedDashboard&projectKey={project_key}")
+            print(f'Waiting for element with ID EnrichedDashboard')
             page.wait_until_visible((By.ID, "EnrichedDashboard"))
         sub_measure()
 
@@ -49,6 +51,7 @@ def app_specific_action(webdriver, datasets):
         def sub_measure():
             print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=AutoRetry&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=AutoRetry&projectKey={project_key}")
+            print(f'Waiting for element with ID AutoRetry')
             page.wait_until_visible((By.ID, "AutoRetry"))
         sub_measure()
     measure()
