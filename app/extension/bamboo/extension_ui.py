@@ -13,6 +13,7 @@ def app_specific_action(webdriver, datasets):
     rnd_plan = random.choice(datasets["build_plans"])
 
     build_plan_id = rnd_plan[1]
+    project_key = build_plan_id.split('-')[0]
 
     # To run action as specific user uncomment code bellow.
     # NOTE: If app_specific_action is running as specific user, make sure that app_specific_action is running
@@ -31,11 +32,21 @@ def app_specific_action(webdriver, datasets):
 
     @print_timing("selenium_app_custom_action")
     def measure():
-        @print_timing("selenium_app_custom_action:view_plan_summary_page")
+        @print_timing("selenium_app_custom_action:project_variables_configuration")
         def sub_measure():
-            page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/browse/{build_plan_id}")
-            page.wait_until_visible((By.ID, "buildResultsTable"))  # Wait for summary field visible
-            # Wait for you app-specific UI element by ID selector
-            page.wait_until_visible((By.ID, "ID_OF_YOUR_APP_SPECIFIC_UI_ELEMENT"))
+            page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/browse/UtilityBelt.action?s=ProjectVariables&projectKey={project_key}")
+            page.wait_until_visible((By.ID, "ProjectVariables"))
+        sub_measure()
+
+        @print_timing("selenium_app_custom_action:enriched_dashboard_configuration")
+        def sub_measure():
+            page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/browse/UtilityBelt.action?s=EnrichedDashboard&projectKey={project_key}")
+            page.wait_until_visible((By.ID, "EnrichedDashboard"))
+        sub_measure()
+
+        @print_timing("selenium_app_custom_action:autoRetry_configuration")
+        def sub_measure():
+            page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/browse/UtilityBelt.action?s=AutoRetry&projectKey={project_key}")
+            page.wait_until_visible((By.ID, "AutoRetry"))
         sub_measure()
     measure()
