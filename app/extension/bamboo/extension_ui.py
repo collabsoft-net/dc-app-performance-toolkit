@@ -33,25 +33,19 @@ def app_specific_action(webdriver, datasets):
     def measure():
         @print_timing("selenium_app_custom_action:project_variables_configuration")
         def sub_measure():
-            print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=ProjectVariables&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=ProjectVariables&projectKey={project_key}")
-            print(f'Waiting for element with ID ProjectVariables')
-            page.wait_until_visible((By.ID, "ProjectVariables"))
+            page.wait_until_visible((By.ID, "page"))
         sub_measure()
 
         @print_timing("selenium_app_custom_action:enriched_dashboard_configuration")
         def sub_measure():
-            print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=EnrichedDashboard&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=EnrichedDashboard&projectKey={project_key}")
-            print(f'Waiting for element with ID EnrichedDashboard')
-            page.wait_until_visible((By.ID, "EnrichedDashboard"))
+            page.wait_until_visible((By.ID, "page"))
         sub_measure()
 
         @print_timing("selenium_app_custom_action:autoRetry_configuration")
         def sub_measure():
-            print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=AutoRetry&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=AutoRetry&projectKey={project_key}")
-            print(f'Waiting for element with ID AutoRetry')
-            page.wait_until_visible((By.ID, "AutoRetry"))
+            page.wait_until_visible((By.ID, "page"))
         sub_measure()
     measure()
