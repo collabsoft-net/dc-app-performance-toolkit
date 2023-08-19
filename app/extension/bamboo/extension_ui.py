@@ -33,18 +33,21 @@ def app_specific_action(webdriver, datasets):
     def measure():
         @print_timing("selenium_app_custom_action:project_variables_configuration")
         def sub_measure():
+            print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=ProjectVariables&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=ProjectVariables&projectKey={project_key}")
             page.wait_until_visible((By.ID, "ProjectVariables"))
         sub_measure()
 
         @print_timing("selenium_app_custom_action:enriched_dashboard_configuration")
         def sub_measure():
+            print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=EnrichedDashboard&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=EnrichedDashboard&projectKey={project_key}")
             page.wait_until_visible((By.ID, "EnrichedDashboard"))
         sub_measure()
 
         @print_timing("selenium_app_custom_action:autoRetry_configuration")
         def sub_measure():
+            print(f'Navigating to {BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=AutoRetry&projectKey={project_key}')
             page.go_to_url(f"{BAMBOO_SETTINGS.server_url}/UtilityBelt.action?s=AutoRetry&projectKey={project_key}")
             page.wait_until_visible((By.ID, "AutoRetry"))
         sub_measure()
